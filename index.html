@@ -25,9 +25,9 @@
         background-color: whitesmoke;
         padding: 5px;
       }
-      .addUser {
+      button {
         margin: 5px;
-        width: 265px;
+        width: 250px;
         height: 35px;
         border-radius: 7px;
         background-color: cornflowerblue;
@@ -37,7 +37,7 @@
         color: aliceblue;
         transition: 1s;
       }
-      .addUser:hover {
+      button:hover {
         cursor: pointer;
         transition: 0.9s;
         background-color: dodgerblue;
@@ -81,12 +81,14 @@
         <br />
         <input type="text" class="inputText" id="job" placeholder="Job" />
         <br />
-        <button class="addUser" onclick="AddUser()">Add User</button>
+        <button onclick="AddUser()">Add User</button>
       </div>
 
-      <button class="addUser" onclick="userShow()">kullanıcıları göster</button>
+      <button  onclick="userShow()">Kullanıcıları göster</button>
+      <br />
+      <button  class="cleanInput" onclick="cleanInput()">Temizle</button>
 
-      <div id="userList"></div>
+      <div id="userList" ></div>
     </main>
 
     <script src="js/Dom-userList.js"></script>
