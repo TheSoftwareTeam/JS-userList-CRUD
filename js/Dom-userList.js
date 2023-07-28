@@ -89,4 +89,5 @@ function newUserUpdate(id) {
   dizi[id].job = document.getElementById("job").value;
   window.alert("Kullanıcı güncellendi.");
   userShow();
+  cleanInput();
 }
