@@ -84,13 +84,16 @@
       flex-direction: column;
     }
 
-    .btnDelete{
-      color: brown;
+    .btnDelete, .btnUpdate{
+      color: white;
       display: flex;
-      justify-content: end;
-      align-items: end;
+      float: right;
+      justify-content: flex-end;
+      align-items: flex-end;
+      
+      width: 50px;
     }
-    .btnDelete:hover{
+    .btnDelete:hover, .btnUpdate:hover{
       cursor: pointer;
       color: red;
     }
