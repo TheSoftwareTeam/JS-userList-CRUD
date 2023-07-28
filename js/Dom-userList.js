@@ -13,6 +13,7 @@ let users = [
     job: "Software",
   },
 ];
+
 var kulVarmi = false;
 
 function control() {
@@ -53,7 +54,8 @@ function AddUser() {
   userShow();
 }
 
-function userShow() {
+function userShow()
+ {
   document.getElementById("userList").innerHTML = "";
 
   for (let name of users) {
@@ -73,8 +75,28 @@ function userShow() {
 
     textH2.innerHTML = name.ad + " " + name.soyad;
     kullaniciDivi.innerHTML += "<h5>" + name.job + "</h5>";
-  }
-  console.log(users);
+
+    let btnSil=document.createElement("a");
+    btnSil.classList="btnDelete";
+    btnSil.setAttribute("id",name.id);
+    btnSil.setAttribute("onClick", `userDelete(${name.id})`);
+    kullaniciDivi.appendChild(btnSil);
+    btnSil.innerHTML="sil";
+
+}
+ }
+
+
+
+function userDelete(id)
+{
+  
+    users.splice(id,1);
+    console.log(users);
+    userShow();
+    cleanInput();
+  
+ 
 }
 
 function cleanInput() {
