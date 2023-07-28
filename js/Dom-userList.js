@@ -13,10 +13,9 @@ let dizi = [
     job: "Software",
   },
 ];
+var kulVarmi = false;
 
-function AddUser() {
-  let kulVarmi = false;
-
+function control() {
   let firstname = document.getElementById("firstname").value;
   let lastname = document.getElementById("lastname").value;
   let job = document.getElementById("job").value;
@@ -24,13 +23,26 @@ function AddUser() {
   if (firstname != "" && lastname != "") {
     for (let i = 0; i < dizi.length; i++) {
       if (dizi[i].ad == firstname && dizi[i].soyad == lastname) {
-        window.alert("Bu kullanici zaten var.");
         cleanInput();
-
         kulVarmi = true;
       }
     }
-    if (kulVarmi == false) {
+  }
+  return kulVarmi;
+}
+
+function AddUser() {
+  let firstname = document.getElementById("firstname").value;
+  let lastname = document.getElementById("lastname").value;
+  let job = document.getElementById("job").value;
+
+  if (firstname != "" && lastname != "") {
+    control();
+
+    if (kulVarmi == true) {
+      window.alert("Bu kullanici zaten var.");
+      cleanInput();
+    } else {
       dizi.push({ id: dizi.length, ad: firstname, soyad: lastname, job: job });
       window.alert("Kullanıcı eklendi.");
       cleanInput();
@@ -38,6 +50,7 @@ function AddUser() {
   } else {
     window.alert("Boş girilemez.");
   }
+  userShow();
 }
 
 function userShow() {
@@ -49,7 +62,7 @@ function userShow() {
     kullaniciDivi.classList = "userCard";
 
     kullaniciDivi.setAttribute("id", name.id);
-    kullaniciDivi.setAttribute("onClick", `userUpdate(${name.id})`);
+    kullaniciDivi.setAttribute("onClick", `getUser(${name.id})`);
 
     document.getElementById("userList").appendChild(kullaniciDivi);
 
@@ -61,6 +74,7 @@ function userShow() {
     textH2.innerHTML = name.ad + " " + name.soyad;
     kullaniciDivi.innerHTML += "<h5>" + name.job + "</h5>";
   }
+  console.log(dizi);
 }
 
 function cleanInput() {
@@ -71,7 +85,7 @@ function cleanInput() {
   document.getElementById("btnAdd").setAttribute("onClick", `AddUser()`);
 }
 
-function userUpdate(id) {
+function getUser(id) {
   document.getElementById("firstname").value = dizi[id].ad;
   document.getElementById("lastname").value = dizi[id].soyad;
   document.getElementById("job").value = dizi[id].job;
@@ -80,14 +94,19 @@ function userUpdate(id) {
 
   document
     .getElementById("btnAdd")
-    .setAttribute("onClick", `newUserUpdate(${id})`);
+    .setAttribute("onClick", `userUpdate(${id})`);
 }
 
-function newUserUpdate(id) {
-  dizi[id].ad = document.getElementById("firstname").value;
-  dizi[id].soyad = document.getElementById("lastname").value;
-  dizi[id].job = document.getElementById("job").value;
-  window.alert("Kullanıcı güncellendi.");
-  userShow();
-  cleanInput();
+function userUpdate(id) {
+  control();
+  if (kulVarmi == true) {
+    window.alert("Zaten Güncell");
+  } else {
+    dizi[id].ad = document.getElementById("firstname").value;
+    dizi[id].soyad = document.getElementById("lastname").value;
+    dizi[id].job = document.getElementById("job").value;
+    window.alert("Kullanıcı Güncellendi.");
+    userShow();
+    cleanInput();
+  }
 }
