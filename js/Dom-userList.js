@@ -1,4 +1,4 @@
-let dizi = [
+let users = [
   {
     id: 0,
     ad: "Murat",
@@ -21,8 +21,8 @@ function control() {
   let job = document.getElementById("job").value;
 
   if (firstname != "" && lastname != "") {
-    for (let i = 0; i < dizi.length; i++) {
-      if (dizi[i].ad == firstname && dizi[i].soyad == lastname) {
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].ad == firstname && users[i].soyad == lastname && users[i].job==job) {
         cleanInput();
         kulVarmi = true;
       }
@@ -43,7 +43,7 @@ function AddUser() {
       window.alert("Bu kullanici zaten var.");
       cleanInput();
     } else {
-      dizi.push({ id: dizi.length, ad: firstname, soyad: lastname, job: job });
+      users.push({ id: users.length, ad: firstname, soyad: lastname, job: job });
       window.alert("Kullanıcı eklendi.");
       cleanInput();
     }
@@ -56,7 +56,7 @@ function AddUser() {
 function userShow() {
   document.getElementById("userList").innerHTML = "";
 
-  for (let name of dizi) {
+  for (let name of users) {
     let kullaniciDivi = document.createElement("div");
 
     kullaniciDivi.classList = "userCard";
@@ -74,7 +74,7 @@ function userShow() {
     textH2.innerHTML = name.ad + " " + name.soyad;
     kullaniciDivi.innerHTML += "<h5>" + name.job + "</h5>";
   }
-  console.log(dizi);
+  console.log(users);
 }
 
 function cleanInput() {
@@ -86,9 +86,9 @@ function cleanInput() {
 }
 
 function getUser(id) {
-  document.getElementById("firstname").value = dizi[id].ad;
-  document.getElementById("lastname").value = dizi[id].soyad;
-  document.getElementById("job").value = dizi[id].job;
+  document.getElementById("firstname").value = users[id].ad;
+  document.getElementById("lastname").value = users[id].soyad;
+  document.getElementById("job").value = users[id].job;
 
   document.getElementById("btnAdd").innerHTML = "Güncelle";
 
@@ -102,9 +102,9 @@ function userUpdate(id) {
   if (kulVarmi == true) {
     window.alert("Zaten Güncell");
   } else {
-    dizi[id].ad = document.getElementById("firstname").value;
-    dizi[id].soyad = document.getElementById("lastname").value;
-    dizi[id].job = document.getElementById("job").value;
+    users[id].ad = document.getElementById("firstname").value;
+    users[id].soyad = document.getElementById("lastname").value;
+    users[id].job = document.getElementById("job").value;
     window.alert("Kullanıcı Güncellendi.");
     userShow();
     cleanInput();
