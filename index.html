@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <style>
+      *,
+      body {
+        font-family: monospace;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        
+      }
+      .inputText {
+        margin: 5px;
+        width: 250px;
+        height: 30px;
+        border-radius: 7px;
+        background-color: whitesmoke;
+        padding: 5px;
+      }
+      .addUser {
+        margin: 5px;
+        width: 265px;
+        height: 35px;
+        border-radius: 7px;
+        background-color: cornflowerblue;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        color: aliceblue;
+        transition: 1s;
+      }
+      .addUser:hover {
+        cursor: pointer;
+        transition: 0.9s;
+        background-color: dodgerblue;
+      }
+      .userCard {
+        width: 450px;
+        height: 80px;
+        background-color: cadetblue;
+        margin: 8px;
+        padding: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .userCard:hover{
+        background-color: rgb(130, 206, 209);
+      }
+      .isimh2 {
+        color: white;
+  
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div id="adduser">
+        <input
+          type="text"
+          class="inputText"
+          id="firstname"
+          placeholder="First Name"
+        />
+        <br />
+        <input
+          type="text"
+          class="inputText"
+          id="lastname"
+          placeholder="Last Name"
+        />
+        <br />
+        <input type="text" class="inputText" id="job" placeholder="Job" />
+        <br />
+        <button class="addUser" onclick="AddUser()">Add User</button>
+      </div>
+
+      <button class="addUser" onclick="userShow()">kullanıcıları göster</button>
+
+      <div id="userList"></div>
+    </main>
+
+    <script src="js/Dom-userList.js"></script>
+  </body>
+</html>
