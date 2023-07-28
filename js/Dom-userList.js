@@ -25,7 +25,7 @@ function AddUser() {
     for (let i = 0; i < dizi.length; i++) {
       if (dizi[i].ad == firstname && dizi[i].soyad == lastname) {
         window.alert("Bu kullanici zaten var.");
-        cleanInput()
+        cleanInput();
 
         kulVarmi = true;
       }
@@ -67,10 +67,26 @@ function cleanInput() {
   document.getElementById("firstname").value = "";
   document.getElementById("lastname").value = "";
   document.getElementById("job").value = "";
+  document.getElementById("btnAdd").innerHTML = "Add User";
+  document.getElementById("btnAdd").setAttribute("onClick", `AddUser()`);
 }
 
 function userUpdate(id) {
   document.getElementById("firstname").value = dizi[id].ad;
   document.getElementById("lastname").value = dizi[id].soyad;
   document.getElementById("job").value = dizi[id].job;
+
+  document.getElementById("btnAdd").innerHTML = "Güncelle";
+
+  document
+    .getElementById("btnAdd")
+    .setAttribute("onClick", `newUserUpdate(${id})`);
+}
+
+function newUserUpdate(id) {
+  dizi[id].ad = document.getElementById("firstname").value;
+  dizi[id].soyad = document.getElementById("lastname").value;
+  dizi[id].job = document.getElementById("job").value;
+  window.alert("Kullanıcı güncellendi.");
+  userShow();
 }
