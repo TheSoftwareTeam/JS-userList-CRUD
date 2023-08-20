@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <script src="https://kit.fontawesome.com/117a0da7a9.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <main>
+
+    <div id="adduser">
+      <input type="text" class="inputText" id="firstname" placeholder="First Name" />
+      <br />
+      <input type="text" class="inputText" id="lastname" placeholder="Last Name" />
+      <br />
+      <input type="text" class="inputText" id="job" placeholder="Job" />
+      <br>
+      <button onclick="openImageSelectDiv()" id="btn-select-image"> <i class="fa-solid fa-user-astronaut fa-xl"
+          style="color: #ff6a00;"></i> Profile Avatar Seçimi</button>
+      <div id="images-box">
+        <img src="/image/01.jpg" onclick="selectImage(this)">
+        <img src="/image/02.jpg" onclick="selectImage(this)">
+        <img src="/image/03.jpg" onclick="selectImage(this)">
+        <img src="/image/04.jpg" onclick="selectImage(this)">
+        <img src="/image/05.jpg" onclick="selectImage(this)">
+        <img src="/image/06.jpg" onclick="selectImage(this)">
+        <img src="/image/07.jpg" onclick="selectImage(this)">
+        <img src="/image/08.jpg" onclick="selectImage(this)">
+        <img src="/image/09.jpg" onclick="selectImage(this)">
+        <img src="/image/010.jpg" onclick="selectImage(this)">
+        <img src="/image/011.jpg" onclick="selectImage(this)">
+        <img src="/image/012.jpg" onclick="selectImage(this)">
+      </div>
+
+    </div>
+
+    <div id="control-btn">
+
+      <button class="button" onclick="userShow()">Kullanıcıları göster</button>
+      <button class="button" id="btnAdd" onclick="AddUser()">Add User</button>
+      <button class="button" class="cleanInput" onclick="cleanInput()">Temizle</button>
+      <div class="button" id="control-panel">
+        <select id="filtre">
+          <option value="job">Job</option>
+          <option value="ad">First Name</option>
+          <option value="soyad">Last Name</option>
+        </select>
+        <input type="text" class="inputText" id="search-input" placeholder="Search" onchange="searchUser()" />
+
+      </div>
+    </div>
+
+    <div id="userList"></div>
+
+    <button id="logla" onclick="listeyilogla()">logla</button>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
