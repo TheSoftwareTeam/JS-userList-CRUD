@@ -5,7 +5,7 @@ let users = [
     soyad: "OKUR",
     job: "The Analist",
     isActive:true,
-    proflieImagePath:"/image/02.jpg",
+    proflieImagePath:"/images/02.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   },
 
@@ -15,7 +15,7 @@ let users = [
     soyad: "KURŞUN",
     job: "Software Engineer",
     isActive:true,
-    proflieImagePath:"/image/01.jpg",
+    proflieImagePath:"/images/01.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
@@ -25,7 +25,7 @@ let users = [
     soyad: "ERÖKSÜZ",
     job: "Software Dveloper",
     isActive:true,
-    proflieImagePath:"/image/08.jpg",
+    proflieImagePath:"/images/08.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
@@ -35,7 +35,7 @@ let users = [
     soyad: "TİRYAKİ",
     job: ".Net Dveloper",
     isActive:true,
-    proflieImagePath:"/image/06.jpg",
+    proflieImagePath:"/images/06.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
@@ -45,7 +45,7 @@ let users = [
     soyad: "ONAROK",
     job: "React",
     isActive:true,
-    proflieImagePath:"/image/01.jpg",
+    proflieImagePath:"/images/01.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
@@ -55,7 +55,7 @@ let users = [
     soyad: "OKUR",
     job: "UX Designer",
     isActive:true,
-    proflieImagePath:"/image/012.jpg",
+    proflieImagePath:"/images/02.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
@@ -65,7 +65,7 @@ let users = [
     soyad: "OKUR",
     job: "Student",
     isActive:true,
-    proflieImagePath:"/image/05.jpg",
+    proflieImagePath:"/images/05.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   }
@@ -93,7 +93,7 @@ function AddUser() {
   let firstname = document.getElementById("firstname").value;
   let lastname = document.getElementById("lastname").value;
   let job = document.getElementById("job").value;
-  let image = document.getElementById("btn-select-image").value;
+  let image = document.getElementById("btn-select-images").value;
 
   if (firstname != "" && lastname != "") {
     control();
@@ -124,10 +124,6 @@ let activeUsers=users.filter((user)=>user.isActive)
     userCard.classList = "userCard";
     userCard.setAttribute("id", user.id);
     document.getElementById("userList").appendChild(userCard);
-
-  
-
-
 
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
