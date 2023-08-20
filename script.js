@@ -198,6 +198,7 @@ function cleanInput() {
   document.getElementById("firstname").value = "";
   document.getElementById("lastname").value = "";
   document.getElementById("job").value = "";
+  document.getElementById("btn-select-image").value = "/images/default.png";
   document.getElementById("btnAdd").innerHTML = "Add User";
   document.getElementById("btnAdd").setAttribute("onClick", `AddUser()`);
 }
@@ -215,17 +216,14 @@ function getUser(id) {
 }
 
 function userUpdate(id) {
-  control();
-  if (kulVarmi == true) {
-    window.alert("Zaten Güncell");
-  } else {
     users[id].ad = document.getElementById("firstname").value;
     users[id].soyad = document.getElementById("lastname").value;
     users[id].job = document.getElementById("job").value;
-    window.alert("Kullanıcı Güncellendi.");
+    users[id].proflieImagePath=document.getElementById("btn-select-image").value;
+  window.alert("Kullanıcı Güncellendi.");
     userShow();
     cleanInput();
-  }
+  
 }
 
 

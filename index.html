@@ -19,7 +19,7 @@
       <br />
       <input type="text" class="inputText" id="job" placeholder="Job" />
       <br>
-      <button onclick="openImageSelectDiv()" id="btn-select-image"> <i class="fa-solid fa-user-astronaut fa-xl"
+      <button value="/images/default.png" onclick="openImageSelectDiv()" id="btn-select-image"> <i class="fa-solid fa-user-astronaut fa-xl"
           style="color: #ff6a00;"></i> Profile Avatar Seçimi</button>
       <div id="images-box">
         <img src="/images/01.png" onclick="selectImage(this)">
@@ -52,6 +52,7 @@
           <option value="soyad">Last Name</option>
         </select>
         <input type="text" class="inputText" id="search-input" placeholder="Search" onchange="searchUser()" />
+    <button id="btn-search"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff;" onclick="searchUser()"></i></button>
       </div>
     </div>
 
