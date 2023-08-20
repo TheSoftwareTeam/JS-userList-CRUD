@@ -1,38 +1,46 @@
 let users = [
   {
-    id: 0,
-    ad: "Murat",
-    soyad: "OKUR",
-    job: "The Analist",
-    isActive:true,
-    proflieImagePath:"/images/02.png",
-    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
-  },
-
-  {
     id: 1,
     ad: "Mahir",
     soyad: "KURŞUN",
     job: "Software Engineer",
     isActive:true,
-    proflieImagePath:"/images/01.png",
+    proflieImagePath:"/images/013.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  
+  },{
+    id: 1,
+    ad: "Murat",
+    soyad: "OKUR",
+    job: "The Analist",
+    isActive:true,
+    proflieImagePath:"/images/09.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  },
+  {
+    id: 2,
+    ad: "Saide Nur",
+    soyad: "OKUR",
+    job: "Barista",
+    isActive:true,
+    proflieImagePath:"/images/07.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
   {
-    id: 2,
-    ad: "Ertan",
-    soyad: "ERÖKSÜZ",
-    job: "Software Dveloper",
+    id: 3,
+    ad: "Zeki",
+    soyad: "OKUR",
+    job: "UX Designer",
     isActive:true,
     proflieImagePath:"/images/08.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
   {
-    id: 3,
-    ad: "Gamze Bakış",
-    soyad: "TİRYAKİ",
+    id: 4,
+    ad: "Hülya",
+    soyad: "ÇELEBİ",
     job: ".Net Dveloper",
     isActive:true,
     proflieImagePath:"/images/06.png",
@@ -40,32 +48,32 @@ let users = [
   
   },
   {
-    id: 4,
+    id: 5,
     ad: "Canbulat",
     soyad: "ONAROK",
     job: "React",
     isActive:true,
-    proflieImagePath:"/images/01.png",
-    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
-  
-  },
-  {
-    id: 5,
-    ad: "Zeki",
-    soyad: "OKUR",
-    job: "UX Designer",
-    isActive:true,
-    proflieImagePath:"/images/02.png",
+    proflieImagePath:"/images/015.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   },
   {
     id: 6,
+    ad: "Ertan",
+    soyad: "ERÖKSÜZ",
+    job: "Front-End Developer",
+    isActive:true,
+    proflieImagePath:"/images/010.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  
+  },
+  {
+    id: 7,
     ad: "Fatih",
     soyad: "OKUR",
     job: "Student",
     isActive:true,
-    proflieImagePath:"/images/05.png",
+    proflieImagePath:"/images/011.png",
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   }
@@ -111,94 +119,96 @@ function AddUser() {
   }
   userShow();
 }
-
+let isListing=false;
 function userShow()
  {
   document.getElementById("userList").innerHTML = "";
-
-let activeUsers=users.filter((user)=>user.isActive)
-
-  activeUsers.forEach((user)=>{
-
-    let userCard = document.createElement("div");
-    userCard.classList = "userCard";
-    userCard.setAttribute("id", user.id);
-    document.getElementById("userList").appendChild(userCard);
-
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+  if(!isListing)
+  {
+    
+    isListing=true
+    let activeUsers=users.filter((user)=>user.isActive)
+    
+      activeUsers.forEach((user)=>{
+    
+        let userCard = document.createElement("div");
+        userCard.classList = "userCard";
+        userCard.setAttribute("id", user.id);
+        document.getElementById("userList").appendChild(userCard);
+    
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
     }
-    return color;
-}
-
-    const randomColor = getRandomColor();
-    userCard.style.backgroundColor = randomColor;
-
-    let userProfileImage = document.createElement("img");
-    userProfileImage.classList = "profile-image";
-    userProfileImage.setAttribute("src", user.proflieImagePath);
-    userCard.appendChild(userProfileImage);
-
-    let userDetails = document.createElement("div");
-    userDetails.classList = "user-details";
-    userDetails.setAttribute("id", user.id);
-    userCard.appendChild(userDetails);
-
-    let textH2 = document.createElement("h2");
-    textH2.classList = "isimh2";
-    textH2.setAttribute("id", "isimh2");
-    userDetails.appendChild(textH2);
-
-    textH2.innerHTML = user.ad + " " + user.soyad;
-    userDetails.innerHTML += "<h5>" + user.job + "</h5>";
-
-    let userDetailText = document.createElement("p");
-    userDetailText.classList = "user-detail";
-    userDetails.appendChild(userDetailText);
-
-    userDetailText.innerText=user.detail;
-
-    let btnUbdate=document.createElement("a");
-    btnUbdate.classList="btn-ubdate";
-    btnUbdate.setAttribute("id",user.id);
-    btnUbdate.setAttribute("onClick", `getUser(${user.id})`);
-    userDetails.appendChild(btnUbdate);
-    btnUbdate.innerHTML=` <i class="fa-solid fa-pen-to-square fa-2xs" style="color: #d95000;"> Ubdate</i>`;
-
-    let btnSil=document.createElement("a");
-    btnSil.classList="btnDelete";
-    btnSil.setAttribute("id",user.id);
-    btnSil.setAttribute("onClick", `userDelete(${user.id})`);
-    userDetails.appendChild(btnSil);
-    btnSil.innerHTML=`<i class="fa-solid fa-trash-can fa-2xs" style="color: #831100;">Delete</i> `;
-
-
-  })
+    
+        const randomColor = getRandomColor();
+        userCard.style.backgroundColor = randomColor;
+    
+        let userProfileImage = document.createElement("img");
+        userProfileImage.classList = "profile-image";
+        userProfileImage.setAttribute("src", user.proflieImagePath);
+        userCard.appendChild(userProfileImage);
+    
+        let userDetails = document.createElement("div");
+        userDetails.classList = "user-details";
+        userDetails.setAttribute("id", user.id);
+        userCard.appendChild(userDetails);
+    
+        let textH2 = document.createElement("h2");
+        textH2.classList = "isimh2";
+        textH2.setAttribute("id", "isimh2");
+        userDetails.appendChild(textH2);
+    
+        textH2.innerHTML = user.ad + " " + user.soyad;
+        userDetails.innerHTML += "<h5>" + user.job + "</h5>";
+    
+        let userDetailText = document.createElement("p");
+        userDetailText.classList = "user-detail";
+        userDetails.appendChild(userDetailText);
+    
+        userDetailText.innerText=user.detail;
+    
+        let btnUbdate=document.createElement("a");
+        btnUbdate.classList="btn-ubdate";
+        btnUbdate.setAttribute("id",user.id);
+        btnUbdate.setAttribute("onClick", `getUser(${user.id})`);
+        userDetails.appendChild(btnUbdate);
+        btnUbdate.innerHTML=` <i class="fa-solid fa-pen-to-square fa-xs" style="color: #d95000;"> U b d a t e</i>`;
+    
+        let btnSil=document.createElement("a");
+        btnSil.classList="btnDelete";
+        btnSil.setAttribute("id",user.id);
+        btnSil.setAttribute("onClick", `userDelete(${user.id})`);
+        userDetails.appendChild(btnSil);
+        btnSil.innerHTML=`<i class="fa-solid fa-trash-can fa-xs" style="color: #831100;"> D e l e t e</i> `;
+    
+    
+      })
+  }
+  else{
+isListing=false
+  }
  }
 
 function userDelete(id)
 {
-  
    users.find(user=>{
   if(user.id===id){
     user.isActive=false}
    })
-   
-
     userShow();
     cleanInput();
-  
- 
 }
 
 function cleanInput() {
   document.getElementById("firstname").value = "";
   document.getElementById("lastname").value = "";
   document.getElementById("job").value = "";
-  document.getElementById("btn-select-image").value = "/images/default.png";
+  document.getElementById("btn-select-image").src = "/images/user.png";
   document.getElementById("btnAdd").innerHTML = "Add User";
   document.getElementById("btnAdd").setAttribute("onClick", `AddUser()`);
 }
@@ -207,6 +217,7 @@ function getUser(id) {
   document.getElementById("firstname").value = users[id].ad;
   document.getElementById("lastname").value = users[id].soyad;
   document.getElementById("job").value = users[id].job;
+  document.getElementById("btn-select-image").src = users[id].proflieImagePath;
 
   document.getElementById("btnAdd").innerHTML = "Güncelle";
 
@@ -226,23 +237,21 @@ function userUpdate(id) {
   
 }
 
-
-
 const openImageSelectDiv=()=>{
 openimageDiv=document.getElementById("images-box");
 openimageDiv.style.visibility=="hidden"?openimageDiv.style.visibility="visible":openimageDiv.style.visibility="hidden"
 } 
 
 
-const selectImage=(selectimage)=>{
- document.getElementById("btn-select-image").setAttribute("value",selectimage.src);
- document.getElementById("images-box").style.visibility="hidden"
+const selectImage=(selectted)=>{
+ document.getElementById("btn-select-image").setAttribute("value",selectted.name);
+ document.getElementById("images-box").style.visibility="hidden";
+ document.getElementById("btn-select-image").src=selectted.name;
 }
-
 
 const searchUser=()=>{
  document.getElementById("userList").innerHTML=""
-  let searchCategorie=document.getElementById("filtre").value;
+  let searchCategorie=document.getElementById("filter").value;
   let searchText=document.getElementById("search-input").value;
 let searchList =  users.filter(user=>user[searchCategorie].includes(searchText)&&user.isActive===true)
 searchList.forEach(
