@@ -1,0 +1,190 @@
+*,
+body {
+  font-family: monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 100px;
+}
+#adduser {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.inputText {
+  margin: 5px;
+  width: 250px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: whitesmoke;
+  padding: 5px;
+}
+
+#btn-select-image {
+  width: 100%;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: gainsboro;
+}
+
+#images-box {
+  width: 30%;
+  height: 30%;
+  background-color: orange;
+  position: absolute;
+  position: fixed;
+  top: 2%;
+  right: 12%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2%;
+  border-radius: 20px;
+  visibility: hidden;
+}
+#images-box img {
+  width: 23%;
+  height: 30%;
+  margin: 1%;
+  cursor: pointer;
+}
+#images-box img:hover {
+  opacity: 0.5;
+}
+
+#control-btn {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: antiquewhite;
+}
+
+.button {
+  width: 19%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: aliceblue;
+  transition: 1s;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: 0.9s;
+  background-color: orange;
+}
+
+#control-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#filtre {
+  width: 45%;
+  height: 70%;
+  font-size: 2rem;
+}
+
+#search {
+  width: 50%;
+  height: 70%;
+  font-size: 1rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#userList {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.userCard {
+  width: 20%;
+  height: 25vh;
+  padding: 1.5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+  margin: 0.1%;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  font-size: .7rem;
+
+}
+
+.userCard:hover {
+  width: 35%;
+  height: 35vh;
+  margin: 0;
+  font-size: 1.2rem;
+
+}
+
+.profile-image {
+  width: 50%;
+  height: 100%;
+  border-radius: 10%;
+}
+.user-details {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  position: relative;
+  align-items: center;
+}
+
+
+.isimh2 {
+  color: white;
+}
+
+.btn-ubdate {
+  color: orange;
+  background-color: rgba(255, 255, 255, 0.169);
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+}
+
+.btnDelete {
+  color: brown;
+  position: absolute; 
+   background-color: rgba(255, 255, 255, 0.169);
+  right: 0;
+  bottom: 0;
+}
+
+#logla {
+  width: 50px;
+  height: 50px;
+  background-color: bisque;
+  border-radius: 50px;
+  border: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
