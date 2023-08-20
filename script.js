@@ -93,7 +93,7 @@ function AddUser() {
   let firstname = document.getElementById("firstname").value;
   let lastname = document.getElementById("lastname").value;
   let job = document.getElementById("job").value;
-  let image = document.getElementById("btn-select-images").value;
+  let image = document.getElementById("btn-select-image").value;
 
   if (firstname != "" && lastname != "") {
     control();
