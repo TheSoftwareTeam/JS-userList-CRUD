@@ -5,7 +5,7 @@ body {
 }
 
 #adduser {
-  height: 20vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content:space-evenly;
@@ -20,7 +20,7 @@ body {
 }
 
 #btn-select-image {
-  width: 20%;
+  width: 25%;
   height: 40%;
   padding: 1%;
   border-radius:100%;
@@ -28,10 +28,12 @@ body {
   background-color: gainsboro;
   background: none;
 }
-
+#btn-select-image:hover {
+opacity: .8;
+}
 #images-box {
   width: 40%;
-  height: 40%;
+  height: 50%;
   background-color: orange;
   position: absolute;
   position: fixed;

@@ -77,6 +77,50 @@ let users = [
     detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
   
   }
+  ,
+  {
+    id: 8,
+    ad: "Mehmet",
+    soyad: "KAYA",
+    job: "Engineer",
+    isActive:true,
+    proflieImagePath:"/images/04.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  
+  }
+  ,
+  {
+    id: 9,
+    ad: "Derya",
+    soyad: "DENİZ",
+    job: "Software Engineer",
+    isActive:true,
+    proflieImagePath:"/images/014.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  
+  },
+  ,
+  {
+    id: 10,
+    ad: "Ramazan",
+    soyad: "YULCA",
+    job: "Student",
+    isActive:true,
+    proflieImagePath:"/images/016.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  
+  },
+  ,
+  {
+    id: 11,
+    ad: "Deniz",
+    soyad: "YAZAR",
+    job: "prof",
+    isActive:true,
+    proflieImagePath:"/images/02.png",
+    detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`
+  
+  }
 ];
 
 var kulVarmi = false;
@@ -117,6 +161,7 @@ function AddUser() {
   } else {
     window.alert("Boş girilemez.");
   }
+  isListing=false;
   userShow();
 }
 let isListing=false;
@@ -232,6 +277,7 @@ function userUpdate(id) {
     users[id].job = document.getElementById("job").value;
     users[id].proflieImagePath=document.getElementById("btn-select-image").value;
   window.alert("Kullanıcı Güncellendi.");
+  isListing=false;
     userShow();
     cleanInput();
   
@@ -247,6 +293,7 @@ const selectImage=(selectted)=>{
  document.getElementById("btn-select-image").setAttribute("value",selectted.name);
  document.getElementById("images-box").style.visibility="hidden";
  document.getElementById("btn-select-image").src=selectted.name;
+ document.getElementById("btn-select-image").value=selectted.name;
 }
 
 const searchUser=()=>{
