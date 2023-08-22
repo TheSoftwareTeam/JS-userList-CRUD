@@ -124,7 +124,7 @@ main {
   align-items: center;
 }
 
-#userList {
+#user-list {
   width: 100%;
   height: auto;
   display: flex;
@@ -133,7 +133,7 @@ main {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.userCard {
+.user-card {
   width: 20%;
   height: 25vh;
   padding: 1%;
@@ -149,7 +149,7 @@ main {
   position: relative;
 }
 
-.userCard:hover {
+.user-card:hover {
   width: 35%;
   height: 40vh;
   margin: 0;
