@@ -1,8 +1,8 @@
 let users = [
   {
-    id: 1,
-    ad: "Mahir",
-    soyad: "KURŞUN",
+    id: 0,
+    firstName: "Mahir",
+    lastName: "KURŞUN",
     job: "Software Engineer",
     isActive:true,
     proflieImagePath:"/images/013.png",
@@ -10,8 +10,8 @@ let users = [
   
   },{
     id: 1,
-    ad: "Murat",
-    soyad: "OKUR",
+    firstName: "Murat",
+    lastName: "OKUR",
     job: "The Analist",
     isActive:true,
     proflieImagePath:"/images/09.png",
@@ -19,8 +19,8 @@ let users = [
   },
   {
     id: 2,
-    ad: "Saide Nur",
-    soyad: "OKUR",
+    firstName: "Saide Nur",
+    lastName: "OKUR",
     job: "Barista",
     isActive:true,
     proflieImagePath:"/images/07.png",
@@ -29,8 +29,8 @@ let users = [
   },
   {
     id: 3,
-    ad: "Zeki",
-    soyad: "OKUR",
+    firstName: "Zeki",
+    lastName: "OKUR",
     job: "UX Designer",
     isActive:true,
     proflieImagePath:"/images/08.png",
@@ -39,8 +39,8 @@ let users = [
   },
   {
     id: 4,
-    ad: "Hülya",
-    soyad: "ÇELEBİ",
+    firstName: "Hülya",
+    lastName: "ÇELEBİ",
     job: ".Net Dveloper",
     isActive:true,
     proflieImagePath:"/images/06.png",
@@ -49,8 +49,8 @@ let users = [
   },
   {
     id: 5,
-    ad: "Canbulat",
-    soyad: "ONAROK",
+    firstName: "Canbulat",
+    lastName: "ONAROK",
     job: "React",
     isActive:true,
     proflieImagePath:"/images/015.png",
@@ -59,8 +59,8 @@ let users = [
   },
   {
     id: 6,
-    ad: "Ertan",
-    soyad: "ERÖKSÜZ",
+    firstName: "Ertan",
+    lastName: "ERÖKSÜZ",
     job: "Front-End Developer",
     isActive:true,
     proflieImagePath:"/images/010.png",
@@ -69,8 +69,8 @@ let users = [
   },
   {
     id: 7,
-    ad: "Fatih",
-    soyad: "OKUR",
+    firstName: "Fatih",
+    lastName: "OKUR",
     job: "Student",
     isActive:true,
     proflieImagePath:"/images/011.png",
@@ -80,8 +80,8 @@ let users = [
   ,
   {
     id: 8,
-    ad: "Mehmet",
-    soyad: "KAYA",
+    firstName: "Mehmet",
+    lastName: "KAYA",
     job: "Engineer",
     isActive:true,
     proflieImagePath:"/images/04.png",
@@ -91,8 +91,8 @@ let users = [
   ,
   {
     id: 9,
-    ad: "Derya",
-    soyad: "DENİZ",
+    firstName: "Derya",
+    lastName: "DENİZ",
     job: "Software Engineer",
     isActive:true,
     proflieImagePath:"/images/014.png",
@@ -102,8 +102,8 @@ let users = [
   ,
   {
     id: 10,
-    ad: "Ramazan",
-    soyad: "YULCA",
+    firstName: "Ramazan",
+    lastName: "YULCA",
     job: "Student",
     isActive:true,
     proflieImagePath:"/images/016.png",
@@ -113,8 +113,8 @@ let users = [
   ,
   {
     id: 11,
-    ad: "Deniz",
-    soyad: "YAZAR",
+    firstName: "Deniz",
+    lastName: "YAZAR",
     job: "prof",
     isActive:true,
     proflieImagePath:"/images/02.png",
@@ -126,18 +126,18 @@ let users = [
 var kulVarmi = false;
 
 function control() {
+  
+
   let firstname = document.getElementById("firstname").value;
   let lastname = document.getElementById("lastname").value;
   let job = document.getElementById("job").value;
-
-  if (firstname != "" && lastname != "") {
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].ad == firstname && users[i].soyad == lastname && users[i].job==job) {
-        cleanInput();
+  
+    users.forEach((user)=>{
+      if (user.firstName === firstname && user.lastName === lastname && user.job===job) {
         kulVarmi = true;
       }
-    }
-  }
+    })
+      
   return kulVarmi;
 }
 
@@ -146,18 +146,20 @@ function AddUser() {
   let lastname = document.getElementById("lastname").value;
   let job = document.getElementById("job").value;
   let image = document.getElementById("btn-select-image").value;
-
+  
   if (firstname != "" && lastname != "") {
     control();
 
-    if (kulVarmi == true) {
+    if (kulVarmi) {
       window.alert("Bu kullanici zaten var.");
-      cleanInput();
+      
     } else {
-      users.push({ id: users.length, ad: firstname, soyad: lastname, job: job ,isActive:true,proflieImagePath:image,detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`});
+      alert(image)
+      users.push({ id: users.length, firstName: firstname, lastName: lastname, job: job ,isActive:true,proflieImagePath:image,detail:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`});
       window.alert("Kullanıcı eklendi.");
-      cleanInput();
+      
     }
+    cleanInput();
   } else {
     window.alert("Boş girilemez.");
   }
@@ -208,7 +210,7 @@ function userShow()
         textH2.setAttribute("id", "isimh2");
         userDetails.appendChild(textH2);
     
-        textH2.innerHTML = user.ad + " " + user.soyad;
+        textH2.innerHTML = user.firstName + " " + user.lastName;
         userDetails.innerHTML += "<h5>" + user.job + "</h5>";
     
         let userDetailText = document.createElement("p");
@@ -259,8 +261,8 @@ function cleanInput() {
 }
 
 function getUser(id) {
-  document.getElementById("firstname").value = users[id].ad;
-  document.getElementById("lastname").value = users[id].soyad;
+  document.getElementById("firstname").value = users[id].firstName;
+  document.getElementById("lastname").value = users[id].lastName;
   document.getElementById("job").value = users[id].job;
   document.getElementById("btn-select-image").src = users[id].proflieImagePath;
 
@@ -273,7 +275,7 @@ function getUser(id) {
 
 function userUpdate(id) {
     users[id].ad = document.getElementById("firstname").value;
-    users[id].soyad = document.getElementById("lastname").value;
+    users[id].lastName = document.getElementById("lastname").value;
     users[id].job = document.getElementById("job").value;
     users[id].proflieImagePath=document.getElementById("btn-select-image").value;
   window.alert("Kullanıcı Güncellendi.");
@@ -336,7 +338,7 @@ function getRandomColor() {
     textH2.setAttribute("id", "isimh2");
     userDetails.appendChild(textH2);
 
-    textH2.innerHTML = user.ad + " " + user.soyad;
+    textH2.innerHTML = user.firstName + " " + user.lastName;
     userDetails.innerHTML += "<h5>" + user.job + "</h5>";
 
     let userDetailText = document.createElement("p");
