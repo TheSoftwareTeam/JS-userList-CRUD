@@ -1,115 +1,3 @@
-let users = [
-  {
-    id: 0,
-    firstName: "Mahir",
-    lastName: "KURŞUN",
-    job: "Software Engineer",
-    isActive: true,
-    proflieImagePath: "/images/013.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 1,
-    firstName: "Murat",
-    lastName: "OKUR",
-    job: "The Analist",
-    isActive: false,
-    proflieImagePath: "/images/09.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 2,
-    firstName: "Saide Nur",
-    lastName: "OKUR",
-    job: "Barista",
-    isActive: true,
-    proflieImagePath: "/images/07.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 3,
-    firstName: "Zeki",
-    lastName: "OKUR",
-    job: "UX Designer",
-    isActive: true,
-    proflieImagePath: "/images/08.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 4,
-    firstName: "Hülya",
-    lastName: "ÇELEBİ",
-    job: ".Net Dveloper",
-    isActive: true,
-    proflieImagePath: "/images/06.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 5,
-    firstName: "Canbulat",
-    lastName: "ONAROK",
-    job: "React",
-    isActive: true,
-    proflieImagePath: "/images/015.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 6,
-    firstName: "Ertan",
-    lastName: "ERÖKSÜZ",
-    job: "Front-End Developer",
-    isActive: true,
-    proflieImagePath: "/images/010.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 7,
-    firstName: "Fatih",
-    lastName: "OKUR",
-    job: "Student",
-    isActive: true,
-    proflieImagePath: "/images/011.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 8,
-    firstName: "Mehmet",
-    lastName: "KAYA",
-    job: "Engineer",
-    isActive: true,
-    proflieImagePath: "/images/04.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  {
-    id: 9,
-    firstName: "Derya",
-    lastName: "DENİZ",
-    job: "Software Engineer",
-    isActive: true,
-    proflieImagePath: "/images/014.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  ,
-  {
-    id: 10,
-    firstName: "Ramazan",
-    lastName: "YULCA",
-    job: "Student",
-    isActive: true,
-    proflieImagePath: "/images/016.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-  ,
-  {
-    id: 11,
-    firstName: "Deniz",
-    lastName: "YAZAR",
-    job: "prof",
-    isActive: true,
-    proflieImagePath: "/images/02.png",
-    detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
-  },
-];
 
 const firstname = document.getElementById("firstname");
 const lastname = document.getElementById("lastname");
@@ -117,26 +5,25 @@ const job = document.getElementById("job");
 const image = document.getElementById("btn-select-image");
 const userList = document.getElementById("user-list");
 const btnAdd = document.getElementById("btn-add");
-
 const imageBox = document.getElementById("images-box");
 
-function control() {
-  var kulVarmi = false;
+function checkUserRegistration() {
+  var isUserRegistered = false;
   users.forEach((user) => {
     if (
       user.firstName === firstname.value &&
       user.lastName === lastname.value &&
       user.job === job.value
     ) {
-      kulVarmi = true;
+      isUserRegistered = true;
     }
   });
-  return kulVarmi;
+  return isUserRegistered;
 }
 
-function AddUser() {
+function createUser() {
   if (firstname.value != "" && lastname.value != "") {
-    if (control()) {
+    if (checkUserRegistration()) {
       alert("Bu kullanici zaten var.");
     } else {
       users.push({
@@ -149,12 +36,57 @@ function AddUser() {
         detail: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, voluptatum vitae officia voluptates ipsa veniam! Numquam ratione voluptas praesentium maxime quam ad assumenda eum non voluptates. Aut nihil cumque reiciendis!`,
       });
       alert("Kullanıcı eklendi.");
-      userShow(users);
+      usersListing(users);
     }
     cleanInput();
   } else {
     alert("Boş girilemez.");
   }
+}
+
+function getUser(id) {
+  firstname.value = users[id].firstName;
+  lastname.value = users[id].lastName;
+  job.value = users[id].job;
+  image.value = users[id].proflieImagePath;
+  image.src = users[id].proflieImagePath;
+  btnAdd.innerText = "Ubdate";
+  btnAdd.setAttribute("onClick", `ubdateUser(${id})`);
+}
+
+function ubdateUser(id) {
+  users[id]={
+    ...users[id],
+    firstName:firstname.value,
+    lastName:lastname.value,
+    job:job.value,
+    proflieImagePath:image.value
+  }
+  console.log(users)
+  window.alert("Kullanıcı Güncellendi.");
+  usersListing(users);
+  cleanInput();
+}
+
+function cleanInput() {
+  firstname.value = "";
+  lastname.value = "";
+  job.value = "";
+  image.src = "/images/user.png";
+  btnAdd.innerText = "Create User";
+  btnAdd.setAttribute("onClick", `createUser()`);
+}
+
+function deletedUser(id) {
+  
+  users.map((user) => {
+    if (user.id == id) {
+      user.isActive = false;
+    }
+  });
+
+  usersListing(users);
+  cleanInput();
 }
 
 function getRandomColor() {
@@ -166,7 +98,7 @@ function getRandomColor() {
   return color;
 }
 
-function userShow(dizi) {
+function usersListing(dizi) {
   userList.innerHTML = "";
 
   let activeUsers = dizi.filter((user) => user.isActive);
@@ -212,50 +144,10 @@ function userShow(dizi) {
     let btnSil = document.createElement("a");
     btnSil.classList = "btnDelete";
     btnSil.setAttribute("id", user.id);
-    btnSil.setAttribute("onClick", `userDelete(${user.id})`);
+    btnSil.setAttribute("onClick", `deletedUser(${user.id})`);
     userDetails.appendChild(btnSil);
     btnSil.innerHTML = `<i class="fa-solid fa-trash-can fa-xs" style="color: #831100;"> D e l e t e</i> `;
   });
-}
-
-function userDelete(id) {
-  
-  users.map((user) => {
-    if (user.id == id) {
-      user.isActive = false;
-    }
-  });
-
-  userShow(users);
-  cleanInput();
-}
-
-function cleanInput() {
-  firstname.value = "";
-  lastname.value = "";
-  job.value = "";
-  image.src = "/images/user.png";
-  btnAdd.innerText = "Add User";
-  btnAdd.setAttribute("onClick", `AddUser()`);
-}
-
-function getUser(id) {
-  firstname.value = users[id].firstName;
-  lastname.value = users[id].lastName;
-  job.value = users[id].job;
-  image.src = users[id].proflieImagePath;
-  btnAdd.innerText = "Ubdate";
-  btnAdd.setAttribute("onClick", `userUpdate(${id})`);
-}
-
-function userUpdate(id) {
-  users[id].ad = firstname.value;
-  users[id].lastName = lastname.value;
-  users[id].job = job.value;
-  users[id].proflieImagePath = image.value;
-  window.alert("Kullanıcı Güncellendi.");
-  userShow(users);
-  cleanInput();
 }
 
 const openImageSelectDiv = () => {
@@ -279,12 +171,7 @@ const searchUser = () => {
     user =>{if(user[searchCategorie].includes(searchText)){return true}}
   );
   console.log(searchList);
-  userShow(searchList)
+  usersListing(searchList)
 };
 
 
-
-
-// const listeyilogla = () => {
-//   console.log(users);
-// };
